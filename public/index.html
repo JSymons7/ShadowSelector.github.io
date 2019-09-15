@@ -47,7 +47,7 @@
 
     List your preferences of people to be assigned to:
     <br>
-    <select name="Option1" id="Option1" width="300" style="width: 300px">
+    <select name="Option1" id="Option1" onchange="updateRemainingOptions()" width="300" style="width: 300px">
         <option value="" selected disabled hidden>Most preferred</option>
         <option value="Ben Schurr">Ben Schurr</option>
         <option value="Chris Greenough">Chris Greenough</option>
@@ -62,7 +62,7 @@
     </select>
     <br><br>
 
-    <select name="Option2" id="Option2" width="300" style="width: 300px">
+    <select name="Option2" id="Option2" onchange="updateRemainingOptions()" width="300" style="width: 300px">
         <option value="" selected disabled hidden>Choose second preference</option>
         <option value="Ben Schurr">Ben Schurr</option>
         <option value="Chris Greenough">Chris Greenough</option>
@@ -77,7 +77,7 @@
     </select>
     <br><br>
 
-    <select name="Option3" id="Option3" width="300" style="width: 300px">
+    <select name="Option3" id="Option3" onchange="updateRemainingOptions()" width="300" style="width: 300px">
         <option value="" selected disabled hidden>Choose third preference</option>
         <option value="Ben Schurr">Ben Schurr</option>
         <option value="Chris Greenough">Chris Greenough</option>
@@ -92,7 +92,7 @@
     </select>
     <br><br>
 
-    <select name="Option4" id="Option4" width="300" style="width: 300px">
+    <select name="Option4" id="Option4" onchange="updateRemainingOptions()" width="300" style="width: 300px">
         <option value="" selected disabled hidden>Choose fourth preference</option>
         <option value="Ben Schurr">Ben Schurr</option>
         <option value="Chris Greenough">Chris Greenough</option>
@@ -107,7 +107,7 @@
     </select>
     <br><br>
 
-    <select name="Option5" id="Option5" width="300" style="width: 300px">
+    <select name="Option5" id="Option5" onchange="updateRemainingOptions()" width="300" style="width: 300px">
         <option value="" selected disabled hidden>Choose fifth preference</option>
         <option value="Ben Schurr">Ben Schurr</option>
         <option value="Chris Greenough">Chris Greenough</option>
@@ -122,7 +122,7 @@
     </select>
     <br><br>
 
-    <select name="Option6" id="Option6" width="300" style="width: 300px">
+    <select name="Option6" id="Option6" onchange="updateRemainingOptions()" width="300" style="width: 300px">
         <option value="" selected disabled hidden>Choose sixth preference</option>
         <option value="Ben Schurr">Ben Schurr</option>
         <option value="Chris Greenough">Chris Greenough</option>
@@ -137,7 +137,7 @@
     </select>
     <br><br>
 
-    <select name="Option7" id="Option7" width="300" style="width: 300px">
+    <select name="Option7" id="Option7" onchange="updateRemainingOptions()" width="300" style="width: 300px">
         <option value="" selected disabled hidden>Choose seventh preference</option>
         <option value="Ben Schurr">Ben Schurr</option>
         <option value="Chris Greenough">Chris Greenough</option>
@@ -152,7 +152,7 @@
     </select>
     <br><br>
 
-    <select name="Option8" id="Option8" width="300" style="width: 300px">
+    <select name="Option8" id="Option8" onchange="updateRemainingOptions()" width="300" style="width: 300px">
         <option value="" selected disabled hidden>Choose least preferred</option>
         <option value="Ben Schurr">Ben Schurr</option>
         <option value="Chris Greenough">Chris Greenough</option>
@@ -167,11 +167,12 @@
     </select>
     <br><br>
 
-    
-
     <h2 id="status"></h2>
 
     <button id="saveButton">Save</button>
+
+    <h3>Remaining Options:</h3>
+    <p id="remainingOptions" />
 
     <script src="./app.js"></script>
 </body>
