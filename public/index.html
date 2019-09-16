@@ -11,33 +11,39 @@
     Your Name: <input type="username" id="username"/>
     <br><br>
     
-    Your current LT (Can't be assigned to you)
+    Your current LT:
     <br>
     <select name="notAssignable" id="notAssignable" width="300" style="width: 300px">
         <option value="" selected disabled hidden>Current LT</option>
         <option value="Ben Schurr">Ben Schurr</option>
+        <option value="Brendan Ryan">Brendan Ryan</option>
         <option value="Chris Greenough">Chris Greenough</option>
         <option value="Chris Rowe">Chris Rowe</option>
         <option value="Eric Hansen">Eric Hansen</option>
         <option value="Gordon Rettkowicz">Gordon Rettkowicz</option>
         <option value="Joanne Martell">Joanne Martell</option>
+        <option value="Mark Kennerley">Mark Kennerley</option>
         <option value="Paul Campbell">Paul Campbell</option>
         <option value="Piers Shore">Piers Shore</option>
         <option value="Priya Singh">Priya Singh</option>
         <option value="Simon Till">Simon Till</option>
     </select>
+    <br>
+    <input type="checkbox" name="LTAssignment" id="LTAssignment">Tick this box to enable being assigned to your LT
     <br><br>
 
     The LT you were assigned to for the first quarter:
     <br>
-    <select name="firstAssignment" id="firstAssignment" width="300" style="width: 300px">
+    <select name="firstAssignment" id="firstAssignment" onchange="updateRemainingOptions()" width="300" style="width: 300px">
         <option value="" selected disabled hidden>Your first assignment</option>
         <option value="Ben Schurr">Ben Schurr</option>
+        <option value="Brendan Ryan">Brendan Ryan</option>
         <option value="Chris Greenough">Chris Greenough</option>
         <option value="Chris Rowe">Chris Rowe</option>
         <option value="Eric Hansen">Eric Hansen</option>
         <option value="Gordon Rettkowicz">Gordon Rettkowicz</option>
         <option value="Joanne Martell">Joanne Martell</option>
+        <option value="Mark Kennerley">Mark Kennerley</option>
         <option value="Paul Campbell">Paul Campbell</option>
         <option value="Piers Shore">Piers Shore</option>
         <option value="Priya Singh">Priya Singh</option>
@@ -50,11 +56,13 @@
     <select name="Option1" id="Option1" onchange="updateRemainingOptions()" width="300" style="width: 300px">
         <option value="" selected disabled hidden>Most preferred</option>
         <option value="Ben Schurr">Ben Schurr</option>
+        <option value="Brendan Ryan">Brendan Ryan</option>
         <option value="Chris Greenough">Chris Greenough</option>
         <option value="Chris Rowe">Chris Rowe</option>
         <option value="Eric Hansen">Eric Hansen</option>
         <option value="Gordon Rettkowicz">Gordon Rettkowicz</option>
         <option value="Joanne Martell">Joanne Martell</option>
+        <option value="Mark Kennerley">Mark Kennerley</option>
         <option value="Paul Campbell">Paul Campbell</option>
         <option value="Piers Shore">Piers Shore</option>
         <option value="Priya Singh">Priya Singh</option>
@@ -65,11 +73,13 @@
     <select name="Option2" id="Option2" onchange="updateRemainingOptions()" width="300" style="width: 300px">
         <option value="" selected disabled hidden>Choose second preference</option>
         <option value="Ben Schurr">Ben Schurr</option>
+        <option value="Brendan Ryan">Brendan Ryan</option>
         <option value="Chris Greenough">Chris Greenough</option>
         <option value="Chris Rowe">Chris Rowe</option>
         <option value="Eric Hansen">Eric Hansen</option>
         <option value="Gordon Rettkowicz">Gordon Rettkowicz</option>
         <option value="Joanne Martell">Joanne Martell</option>
+        <option value="Mark Kennerley">Mark Kennerley</option>
         <option value="Paul Campbell">Paul Campbell</option>
         <option value="Piers Shore">Piers Shore</option>
         <option value="Priya Singh">Priya Singh</option>
@@ -80,11 +90,13 @@
     <select name="Option3" id="Option3" onchange="updateRemainingOptions()" width="300" style="width: 300px">
         <option value="" selected disabled hidden>Choose third preference</option>
         <option value="Ben Schurr">Ben Schurr</option>
+        <option value="Brendan Ryan">Brendan Ryan</option>
         <option value="Chris Greenough">Chris Greenough</option>
         <option value="Chris Rowe">Chris Rowe</option>
         <option value="Eric Hansen">Eric Hansen</option>
         <option value="Gordon Rettkowicz">Gordon Rettkowicz</option>
         <option value="Joanne Martell">Joanne Martell</option>
+        <option value="Mark Kennerley">Mark Kennerley</option>
         <option value="Paul Campbell">Paul Campbell</option>
         <option value="Piers Shore">Piers Shore</option>
         <option value="Priya Singh">Priya Singh</option>
@@ -95,11 +107,13 @@
     <select name="Option4" id="Option4" onchange="updateRemainingOptions()" width="300" style="width: 300px">
         <option value="" selected disabled hidden>Choose fourth preference</option>
         <option value="Ben Schurr">Ben Schurr</option>
+        <option value="Brendan Ryan">Brendan Ryan</option>
         <option value="Chris Greenough">Chris Greenough</option>
         <option value="Chris Rowe">Chris Rowe</option>
         <option value="Eric Hansen">Eric Hansen</option>
         <option value="Gordon Rettkowicz">Gordon Rettkowicz</option>
         <option value="Joanne Martell">Joanne Martell</option>
+        <option value="Mark Kennerley">Mark Kennerley</option>
         <option value="Paul Campbell">Paul Campbell</option>
         <option value="Piers Shore">Piers Shore</option>
         <option value="Priya Singh">Priya Singh</option>
@@ -110,11 +124,13 @@
     <select name="Option5" id="Option5" onchange="updateRemainingOptions()" width="300" style="width: 300px">
         <option value="" selected disabled hidden>Choose fifth preference</option>
         <option value="Ben Schurr">Ben Schurr</option>
+        <option value="Brendan Ryan">Brendan Ryan</option>
         <option value="Chris Greenough">Chris Greenough</option>
         <option value="Chris Rowe">Chris Rowe</option>
         <option value="Eric Hansen">Eric Hansen</option>
         <option value="Gordon Rettkowicz">Gordon Rettkowicz</option>
         <option value="Joanne Martell">Joanne Martell</option>
+        <option value="Mark Kennerley">Mark Kennerley</option>
         <option value="Paul Campbell">Paul Campbell</option>
         <option value="Piers Shore">Piers Shore</option>
         <option value="Priya Singh">Priya Singh</option>
@@ -125,11 +141,13 @@
     <select name="Option6" id="Option6" onchange="updateRemainingOptions()" width="300" style="width: 300px">
         <option value="" selected disabled hidden>Choose sixth preference</option>
         <option value="Ben Schurr">Ben Schurr</option>
+        <option value="Brendan Ryan">Brendan Ryan</option>
         <option value="Chris Greenough">Chris Greenough</option>
         <option value="Chris Rowe">Chris Rowe</option>
         <option value="Eric Hansen">Eric Hansen</option>
         <option value="Gordon Rettkowicz">Gordon Rettkowicz</option>
         <option value="Joanne Martell">Joanne Martell</option>
+        <option value="Mark Kennerley">Mark Kennerley</option>
         <option value="Paul Campbell">Paul Campbell</option>
         <option value="Piers Shore">Piers Shore</option>
         <option value="Priya Singh">Priya Singh</option>
@@ -140,11 +158,13 @@
     <select name="Option7" id="Option7" onchange="updateRemainingOptions()" width="300" style="width: 300px">
         <option value="" selected disabled hidden>Choose seventh preference</option>
         <option value="Ben Schurr">Ben Schurr</option>
+        <option value="Brendan Ryan">Brendan Ryan</option>
         <option value="Chris Greenough">Chris Greenough</option>
         <option value="Chris Rowe">Chris Rowe</option>
         <option value="Eric Hansen">Eric Hansen</option>
         <option value="Gordon Rettkowicz">Gordon Rettkowicz</option>
         <option value="Joanne Martell">Joanne Martell</option>
+        <option value="Mark Kennerley">Mark Kennerley</option>
         <option value="Paul Campbell">Paul Campbell</option>
         <option value="Piers Shore">Piers Shore</option>
         <option value="Priya Singh">Priya Singh</option>
@@ -153,13 +173,68 @@
     <br><br>
 
     <select name="Option8" id="Option8" onchange="updateRemainingOptions()" width="300" style="width: 300px">
-        <option value="" selected disabled hidden>Choose least preferred</option>
+        <option value="" selected disabled hidden>Choose ninth preferred</option>
         <option value="Ben Schurr">Ben Schurr</option>
+        <option value="Brendan Ryan">Brendan Ryan</option>
         <option value="Chris Greenough">Chris Greenough</option>
         <option value="Chris Rowe">Chris Rowe</option>
         <option value="Eric Hansen">Eric Hansen</option>
         <option value="Gordon Rettkowicz">Gordon Rettkowicz</option>
         <option value="Joanne Martell">Joanne Martell</option>
+        <option value="Mark Kennerley">Mark Kennerley</option>
+        <option value="Paul Campbell">Paul Campbell</option>
+        <option value="Piers Shore">Piers Shore</option>
+        <option value="Priya Singh">Priya Singh</option>
+        <option value="Simon Till">Simon Till</option>
+    </select>
+    <br><br>
+
+    <select name="Option9" id="Option9" onchange="updateRemainingOptions()" width="300" style="width: 300px">
+        <option value="" selected disabled hidden>Choose tenth Preferred</option>
+        <option value="Ben Schurr">Ben Schurr</option>
+        <option value="Brendan Ryan">Brendan Ryan</option>
+        <option value="Chris Greenough">Chris Greenough</option>
+        <option value="Chris Rowe">Chris Rowe</option>
+        <option value="Eric Hansen">Eric Hansen</option>
+        <option value="Gordon Rettkowicz">Gordon Rettkowicz</option>
+        <option value="Joanne Martell">Joanne Martell</option>
+        <option value="Mark Kennerley">Mark Kennerley</option>
+        <option value="Paul Campbell">Paul Campbell</option>
+        <option value="Piers Shore">Piers Shore</option>
+        <option value="Priya Singh">Priya Singh</option>
+        <option value="Simon Till">Simon Till</option>
+    </select>
+    <br><br>
+
+
+    <select name="Option10" id="Option10" onchange="updateRemainingOptions()" width="300" style="width: 300px">
+        <option value="" selected disabled hidden>Choose eleventh Preferred</option>
+        <option value="Ben Schurr">Ben Schurr</option>
+        <option value="Brendan Ryan">Brendan Ryan</option>
+        <option value="Chris Greenough">Chris Greenough</option>
+        <option value="Chris Rowe">Chris Rowe</option>
+        <option value="Eric Hansen">Eric Hansen</option>
+        <option value="Gordon Rettkowicz">Gordon Rettkowicz</option>
+        <option value="Joanne Martell">Joanne Martell</option>
+        <option value="Mark Kennerley">Mark Kennerley</option>
+        <option value="Paul Campbell">Paul Campbell</option>
+        <option value="Piers Shore">Piers Shore</option>
+        <option value="Priya Singh">Priya Singh</option>
+        <option value="Simon Till">Simon Till</option>
+    </select>
+    <br><br>
+
+
+    <select name="Option11" id="Option11" onchange="updateRemainingOptions()" width="300" style="width: 300px">
+        <option value="" selected disabled hidden>Least Preferred</option>
+        <option value="Ben Schurr">Ben Schurr</option>
+        <option value="Brendan Ryan">Brendan Ryan</option>
+        <option value="Chris Greenough">Chris Greenough</option>
+        <option value="Chris Rowe">Chris Rowe</option>
+        <option value="Eric Hansen">Eric Hansen</option>
+        <option value="Gordon Rettkowicz">Gordon Rettkowicz</option>
+        <option value="Joanne Martell">Joanne Martell</option>
+        <option value="Mark Kennerley">Mark Kennerley</option>
         <option value="Paul Campbell">Paul Campbell</option>
         <option value="Piers Shore">Piers Shore</option>
         <option value="Priya Singh">Priya Singh</option>

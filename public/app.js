@@ -1,10 +1,12 @@
 options = [
     "Ben Schurr",
+    "Brendan Ryan",
     "Chris Greenough",
     "Chris Rowe",
     "Eric Hansen",
     "Gordon Rettkowicz",
     "Joanne Martell",
+    "Mark Kennerley",
     "Paul Campbell",
     "Piers Shore",
     "Priya Singh",
@@ -37,9 +39,13 @@ const option5 = document.querySelector("#option5")
 const option6 = document.querySelector("#option6")
 const option7 = document.querySelector("#option7")
 const option8 = document.querySelector("#option8")
+const option9 = document.querySelector("#option9")
+const option10 = document.querySelector("#option10")
+const option11 = document.querySelector("#option11")
 const firstAssignment = document.querySelector("#firstAssignment")
 const notAssignable = document.querySelector("#notAssignable")
-const saveButton = document.querySelector("#saveButton")    
+const enableLTAssignment = document.querySelector("#LTAssignment")
+const saveButton = document.querySelector("#saveButton")
 
 saveButton.addEventListener("click", function() {
     var fieldEntries = [ option1.value,
@@ -50,8 +56,10 @@ saveButton.addEventListener("click", function() {
                         option6.value,
                         option7.value,
                         option8.value,
-                        firstAssignment.value,
-                        notAssignable.value];
+                        option9.value,
+                        option10.value,
+                        option11.value,
+                        firstAssignment.value];
 
     console.log(emptyEntries(fieldEntries))
     if(emptyEntries(fieldEntries)) {
@@ -72,8 +80,12 @@ saveButton.addEventListener("click", function() {
             preference6: option6.value,
             preference7: option7.value,
             preference8: option8.value,
+            preference9: option9.value,
+            preference10: option10.value,
+            preference11: option11.value,
             alreadyAssigned: firstAssignment.value,
             currentLT: notAssignable.value,
+            enableAssignmentToCurrentLT: enableLTAssignment.checked,
             timestamp: firebase.firestore.FieldValue.serverTimestamp()
         }).then(function() {
             document.querySelector('#Status').innerHTML = "Successfully saved results";
@@ -138,12 +150,14 @@ function updateRemainingOptions() {
         option6.value,
         option7.value,
         option8.value,
-        firstAssignment.value,
-        notAssignable.value];
-    console.log(fieldEntries)
-    console.log((new Set(fieldEntries)))
-    console.log(options)
-    console.log((new Set(options)))
+        option9.value,
+        option10.value,
+        option11.value,
+        firstAssignment.value];
+    console.log(fieldEntries);
+    console.log((new Set(fieldEntries)));
+    console.log(options);
+    console.log((new Set(options)));
     console.log((new Set(options)).difference(new Set(fieldEntries)));
     remaining = (new Set(options)).difference(new Set(fieldEntries))
 
