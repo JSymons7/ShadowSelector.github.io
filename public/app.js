@@ -1,11 +1,12 @@
 options = [
     "Ben Schurr",
     "Brendan Ryan",
+    "Brent Mealings",
     "Chris Greenough",
     "Chris Rowe",
     "Eric Hansen",
     "Gordon Rettkowicz",
-    "Joanne Martell",
+    "Jo Martell",
     "Mark Kennerley",
     "Paul Campbell",
     "Piers Shore",
@@ -42,6 +43,7 @@ const option8 = document.querySelector("#option8")
 const option9 = document.querySelector("#option9")
 const option10 = document.querySelector("#option10")
 const option11 = document.querySelector("#option11")
+const option12 = document.querySelector("#option12")
 const firstAssignment = document.querySelector("#firstAssignment")
 const notAssignable = document.querySelector("#notAssignable")
 const enableLTAssignment = document.querySelector("#LTAssignment")
@@ -59,6 +61,7 @@ saveButton.addEventListener("click", function() {
                         option9.value,
                         option10.value,
                         option11.value,
+                        option12.value,
                         firstAssignment.value];
 
     console.log(emptyEntries(fieldEntries))
@@ -83,6 +86,7 @@ saveButton.addEventListener("click", function() {
             preference9: option9.value,
             preference10: option10.value,
             preference11: option11.value,
+            preference12: option12.value,
             alreadyAssigned: firstAssignment.value,
             currentLT: notAssignable.value,
             enableAssignmentToCurrentLT: enableLTAssignment.checked,
@@ -153,6 +157,7 @@ function updateRemainingOptions() {
         option9.value,
         option10.value,
         option11.value,
+        option12.value,
         firstAssignment.value];
     console.log(fieldEntries);
     console.log((new Set(fieldEntries)));
