@@ -2,8 +2,14 @@
 
 <head>
     <title>Shadow Selector Preferences</title>
+
+    <script src="selectionOptions.js"></script>
+    <script src="./app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/6.6.1/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/6.6.1/firebase-firestore.js"></script>
+    <script>console.log(possibleOptions)</script>
+    <script>var fieldEntries = null;</script>
+    <!-- <script>console.log(fieldEntries)</script> -->
 </head>
 
 <body>
@@ -15,274 +21,123 @@
     <br>
     <select name="notAssignable" id="notAssignable" width="300" style="width: 300px">
         <option value="" selected disabled hidden>Current LT</option>
-        <option value="Ben Schurr">Ben Schurr</option>
-        <option value="Brendan Ryan">Brendan Ryan</option>
-        <option value="Brent Mealings">Brent Mealings</option>
-        <option value="Chris Greenough">Chris Greenough</option>
-        <option value="Chris Rowe">Chris Rowe</option>
-        <option value="Eric Hansen">Eric Hansen</option>
-        <option value="Gordon Rettkowicz">Gordon Rettkowicz</option>
-        <option value="Jo Martell">Jo Martell</option>
-        <option value="Mark Kennerley">Mark Kennerley</option>
-        <option value="Paul Campbell">Paul Campbell</option>
-        <option value="Piers Shore">Piers Shore</option>
-        <option value="Priya Singh">Priya Singh</option>
-        <option value="Simon Till">Simon Till</option>
+        <option value="directorNotInLT">Director is not in lead team</option>
     </select>
     <br>
-    <input type="checkbox" name="LTAssignment" id="LTAssignment">Tick this box to enable being assigned to your LT
+    <input type="checkbox" name="LTAssignment" id="LTAssignment">Tick this box to enable assignment to your LT (ignore if they're not in LT)
     <br><br>
 
     The LT you were assigned to for the first quarter:
     <br>
-    <select name="firstAssignment" id="firstAssignment" onchange="updateRemainingOptions()" width="300" style="width: 300px">
+    <select name="firstAssignment" id="firstAssignment" onchange="updateRemainingOptions(fieldEntries, possibleOptions)" width="300" style="width: 300px">
         <option value="" selected disabled hidden>Your first assignment</option>
-        <option value="Ben Schurr">Ben Schurr</option>
-        <option value="Brendan Ryan">Brendan Ryan</option>
-        <option value="Brent Mealings">Brent Mealings</option>
-        <option value="Chris Greenough">Chris Greenough</option>
-        <option value="Chris Rowe">Chris Rowe</option>
-        <option value="Eric Hansen">Eric Hansen</option>
-        <option value="Gordon Rettkowicz">Gordon Rettkowicz</option>
-        <option value="Jo Martell">Jo Martell</option>
-        <option value="Mark Kennerley">Mark Kennerley</option>
-        <option value="Paul Campbell">Paul Campbell</option>
-        <option value="Piers Shore">Piers Shore</option>
-        <option value="Priya Singh">Priya Singh</option>
-        <option value="Simon Till">Simon Till</option>
+        <option value="firstAssignmentNoLongerAvailabel">Lead team member no longer available</option>
     </select>
     <br><br>
 
     List your preferences of people to be assigned to:
     <br>
-    <select name="Option1" id="Option1" onchange="updateRemainingOptions()" width="300" style="width: 300px">
-        <option value="" selected disabled hidden>Most preferred</option>
-        <option value="Ben Schurr">Ben Schurr</option>
-        <option value="Brendan Ryan">Brendan Ryan</option>
-        <option value="Brent Mealings">Brent Mealings</option>
-        <option value="Chris Greenough">Chris Greenough</option>
-        <option value="Chris Rowe">Chris Rowe</option>
-        <option value="Eric Hansen">Eric Hansen</option>
-        <option value="Gordon Rettkowicz">Gordon Rettkowicz</option>
-        <option value="Jo Martell">Jo Martell</option>
-        <option value="Mark Kennerley">Mark Kennerley</option>
-        <option value="Paul Campbell">Paul Campbell</option>
-        <option value="Piers Shore">Piers Shore</option>
-        <option value="Priya Singh">Priya Singh</option>
-        <option value="Simon Till">Simon Till</option>
+    <select name="Option1" id="Option1" onchange="updateRemainingOptions(fieldEntries, possibleOptions)" width="300" style="width: 300px">
+        <option value="" selected disabled hidden>Choose highest preference</option>
     </select>
     <br><br>
-
-    <select name="Option2" id="Option2" onchange="updateRemainingOptions()" width="300" style="width: 300px">
+    
+    <select name="Option2" id="Option2" onchange="updateRemainingOptions(fieldEntries, possibleOptions)" width="300" style="width: 300px">
         <option value="" selected disabled hidden>Choose second preference</option>
-        <option value="Ben Schurr">Ben Schurr</option>
-        <option value="Brendan Ryan">Brendan Ryan</option>
-        <option value="Brent Mealings">Brent Mealings</option>
-        <option value="Chris Greenough">Chris Greenough</option>
-        <option value="Chris Rowe">Chris Rowe</option>
-        <option value="Eric Hansen">Eric Hansen</option>
-        <option value="Gordon Rettkowicz">Gordon Rettkowicz</option>
-        <option value="Jo Martell">Jo Martell</option>
-        <option value="Mark Kennerley">Mark Kennerley</option>
-        <option value="Paul Campbell">Paul Campbell</option>
-        <option value="Piers Shore">Piers Shore</option>
-        <option value="Priya Singh">Priya Singh</option>
-        <option value="Simon Till">Simon Till</option>
     </select>
     <br><br>
 
-    <select name="Option3" id="Option3" onchange="updateRemainingOptions()" width="300" style="width: 300px">
+    <select name="Option3" id="Option3" onchange="updateRemainingOptions(fieldEntries, possibleOptions)" width="300" style="width: 300px">
         <option value="" selected disabled hidden>Choose third preference</option>
-        <option value="Ben Schurr">Ben Schurr</option>
-        <option value="Brendan Ryan">Brendan Ryan</option>
-        <option value="Brent Mealings">Brent Mealings</option>
-        <option value="Chris Greenough">Chris Greenough</option>
-        <option value="Chris Rowe">Chris Rowe</option>
-        <option value="Eric Hansen">Eric Hansen</option>
-        <option value="Gordon Rettkowicz">Gordon Rettkowicz</option>
-        <option value="Jo Martell">Jo Martell</option>
-        <option value="Mark Kennerley">Mark Kennerley</option>
-        <option value="Paul Campbell">Paul Campbell</option>
-        <option value="Piers Shore">Piers Shore</option>
-        <option value="Priya Singh">Priya Singh</option>
-        <option value="Simon Till">Simon Till</option>
     </select>
     <br><br>
 
-    <select name="Option4" id="Option4" onchange="updateRemainingOptions()" width="300" style="width: 300px">
+    <select name="Option4" id="Option4" onchange="updateRemainingOptions(fieldEntries, possibleOptions)" width="300" style="width: 300px">
         <option value="" selected disabled hidden>Choose fourth preference</option>
-        <option value="Ben Schurr">Ben Schurr</option>
-        <option value="Brendan Ryan">Brendan Ryan</option>
-        <option value="Brent Mealings">Brent Mealings</option>
-        <option value="Chris Greenough">Chris Greenough</option>
-        <option value="Chris Rowe">Chris Rowe</option>
-        <option value="Eric Hansen">Eric Hansen</option>
-        <option value="Gordon Rettkowicz">Gordon Rettkowicz</option>
-        <option value="Jo Martell">Jo Martell</option>
-        <option value="Mark Kennerley">Mark Kennerley</option>
-        <option value="Paul Campbell">Paul Campbell</option>
-        <option value="Piers Shore">Piers Shore</option>
-        <option value="Priya Singh">Priya Singh</option>
-        <option value="Simon Till">Simon Till</option>
     </select>
     <br><br>
 
-    <select name="Option5" id="Option5" onchange="updateRemainingOptions()" width="300" style="width: 300px">
+    <select name="Option5" id="Option5" onchange="updateRemainingOptions(fieldEntries, possibleOptions)" width="300" style="width: 300px">
         <option value="" selected disabled hidden>Choose fifth preference</option>
-        <option value="Ben Schurr">Ben Schurr</option>
-        <option value="Brendan Ryan">Brendan Ryan</option>
-        <option value="Brent Mealings">Brent Mealings</option>
-        <option value="Chris Greenough">Chris Greenough</option>
-        <option value="Chris Rowe">Chris Rowe</option>
-        <option value="Eric Hansen">Eric Hansen</option>
-        <option value="Gordon Rettkowicz">Gordon Rettkowicz</option>
-        <option value="Jo Martell">Jo Martell</option>
-        <option value="Mark Kennerley">Mark Kennerley</option>
-        <option value="Paul Campbell">Paul Campbell</option>
-        <option value="Piers Shore">Piers Shore</option>
-        <option value="Priya Singh">Priya Singh</option>
-        <option value="Simon Till">Simon Till</option>
     </select>
     <br><br>
 
-    <select name="Option6" id="Option6" onchange="updateRemainingOptions()" width="300" style="width: 300px">
+    <select name="Option6" id="Option6" onchange="updateRemainingOptions(fieldEntries, possibleOptions)" width="300" style="width: 300px">
         <option value="" selected disabled hidden>Choose sixth preference</option>
-        <option value="Ben Schurr">Ben Schurr</option>
-        <option value="Brendan Ryan">Brendan Ryan</option>
-        <option value="Brent Mealings">Brent Mealings</option>
-        <option value="Chris Greenough">Chris Greenough</option>
-        <option value="Chris Rowe">Chris Rowe</option>
-        <option value="Eric Hansen">Eric Hansen</option>
-        <option value="Gordon Rettkowicz">Gordon Rettkowicz</option>
-        <option value="Jo Martell">Jo Martell</option>
-        <option value="Mark Kennerley">Mark Kennerley</option>
-        <option value="Paul Campbell">Paul Campbell</option>
-        <option value="Piers Shore">Piers Shore</option>
-        <option value="Priya Singh">Priya Singh</option>
-        <option value="Simon Till">Simon Till</option>
     </select>
     <br><br>
 
-    <select name="Option7" id="Option7" onchange="updateRemainingOptions()" width="300" style="width: 300px">
+    <select name="Option7" id="Option7" onchange="updateRemainingOptions(fieldEntries, possibleOptions)" width="300" style="width: 300px">
         <option value="" selected disabled hidden>Choose seventh preference</option>
-        <option value="Ben Schurr">Ben Schurr</option>
-        <option value="Brendan Ryan">Brendan Ryan</option>
-        <option value="Brent Mealings">Brent Mealings</option>
-        <option value="Chris Greenough">Chris Greenough</option>
-        <option value="Chris Rowe">Chris Rowe</option>
-        <option value="Eric Hansen">Eric Hansen</option>
-        <option value="Gordon Rettkowicz">Gordon Rettkowicz</option>
-        <option value="Jo Martell">Jo Martell</option>
-        <option value="Mark Kennerley">Mark Kennerley</option>
-        <option value="Paul Campbell">Paul Campbell</option>
-        <option value="Piers Shore">Piers Shore</option>
-        <option value="Priya Singh">Priya Singh</option>
-        <option value="Simon Till">Simon Till</option>
     </select>
     <br><br>
 
-    <select name="Option8" id="Option8" onchange="updateRemainingOptions()" width="300" style="width: 300px">
-        <option value="" selected disabled hidden>Choose ninth preferred</option>
-        <option value="Ben Schurr">Ben Schurr</option>
-        <option value="Brendan Ryan">Brendan Ryan</option>
-        <option value="Brent Mealings">Brent Mealings</option>
-        <option value="Chris Greenough">Chris Greenough</option>
-        <option value="Chris Rowe">Chris Rowe</option>
-        <option value="Eric Hansen">Eric Hansen</option>
-        <option value="Gordon Rettkowicz">Gordon Rettkowicz</option>
-        <option value="Jo Martell">Jo Martell</option>
-        <option value="Mark Kennerley">Mark Kennerley</option>
-        <option value="Paul Campbell">Paul Campbell</option>
-        <option value="Piers Shore">Piers Shore</option>
-        <option value="Priya Singh">Priya Singh</option>
-        <option value="Simon Till">Simon Till</option>
+    <select name="Option8" id="Option8" onchange="updateRemainingOptions(fieldEntries, possibleOptions)" width="300" style="width: 300px">
+        <option value="" selected disabled hidden>Choose eight preference</option>
     </select>
     <br><br>
 
-    <select name="Option9" id="Option9" onchange="updateRemainingOptions()" width="300" style="width: 300px">
-        <option value="" selected disabled hidden>Choose tenth Preferred</option>
-        <option value="Ben Schurr">Ben Schurr</option>
-        <option value="Brendan Ryan">Brendan Ryan</option>
-        <option value="Brent Mealings">Brent Mealings</option>
-        <option value="Chris Greenough">Chris Greenough</option>
-        <option value="Chris Rowe">Chris Rowe</option>
-        <option value="Eric Hansen">Eric Hansen</option>
-        <option value="Gordon Rettkowicz">Gordon Rettkowicz</option>
-        <option value="Jo Martell">Jo Martell</option>
-        <option value="Mark Kennerley">Mark Kennerley</option>
-        <option value="Paul Campbell">Paul Campbell</option>
-        <option value="Piers Shore">Piers Shore</option>
-        <option value="Priya Singh">Priya Singh</option>
-        <option value="Simon Till">Simon Till</option>
+    <select name="Option9" id="Option9" onchange="updateRemainingOptions(fieldEntries, possibleOptions)" width="300" style="width: 300px">
+        <option value="" selected disabled hidden>Choose ninth preference</option>
     </select>
     <br><br>
 
-
-    <select name="Option10" id="Option10" onchange="updateRemainingOptions()" width="300" style="width: 300px">
-        <option value="" selected disabled hidden>Choose eleventh Preferred</option>
-        <option value="Ben Schurr">Ben Schurr</option>
-        <option value="Brendan Ryan">Brendan Ryan</option>
-        <option value="Brent Mealings">Brent Mealings</option>
-        <option value="Chris Greenough">Chris Greenough</option>
-        <option value="Chris Rowe">Chris Rowe</option>
-        <option value="Eric Hansen">Eric Hansen</option>
-        <option value="Gordon Rettkowicz">Gordon Rettkowicz</option>
-        <option value="Jo Martell">Jo Martell</option>
-        <option value="Mark Kennerley">Mark Kennerley</option>
-        <option value="Paul Campbell">Paul Campbell</option>
-        <option value="Piers Shore">Piers Shore</option>
-        <option value="Priya Singh">Priya Singh</option>
-        <option value="Simon Till">Simon Till</option>
+    <select name="Option10" id="Option10" onchange="updateRemainingOptions(fieldEntries, possibleOptions)" width="300" style="width: 300px">
+        <option value="" selected disabled hidden>Choose lowest preference</option>
     </select>
     <br><br>
 
+    <h3>Remaining Options:</h3>
+    <p id="remainingOptions"></p>
+    <br><br>
 
-    <select name="Option11" id="Option11" onchange="updateRemainingOptions()" width="300" style="width: 300px">
-        <option value="" selected disabled hidden>Choose twelfth Preferred</option>
-        <option value="Ben Schurr">Ben Schurr</option>
-        <option value="Brendan Ryan">Brendan Ryan</option>
-        <option value="Brent Mealings">Brent Mealings</option>
-        <option value="Chris Greenough">Chris Greenough</option>
-        <option value="Chris Rowe">Chris Rowe</option>
-        <option value="Eric Hansen">Eric Hansen</option>
-        <option value="Gordon Rettkowicz">Gordon Rettkowicz</option>
-        <option value="Jo Martell">Jo Martell</option>
-        <option value="Mark Kennerley">Mark Kennerley</option>
-        <option value="Paul Campbell">Paul Campbell</option>
-        <option value="Piers Shore">Piers Shore</option>
-        <option value="Priya Singh">Priya Singh</option>
-        <option value="Simon Till">Simon Till</option>
+    <script>
+        insertOptions("notAssignable", possibleOptions);
+        insertOptions("firstAssignment", possibleOptions);
+        for (selectNum = 1; selectNum <= 10; selectNum++) {
+            insertOptions("Option" + selectNum, possibleOptions);
+        }
+    </script>
+
+    List your preferences for the pillar projects:
+    <br>
+    <select name="pillarOption1" id="pillarOption1" onchange="updateRemainingOptions(fieldEntries, possibleOptions)" width="300" style="width: 300px">
+        <option value="" selected disabled hidden>Choose highest preference</option>
     </select>
     <br><br>
 
-
-    <select name="Option12" id="Option12" onchange="updateRemainingOptions()" width="300" style="width: 300px">
-        <option value="" selected disabled hidden>Least Preferred</option>
-        <option value="Ben Schurr">Ben Schurr</option>
-        <option value="Brendan Ryan">Brendan Ryan</option>
-        <option value="Brent Mealings">Brent Mealings</option>
-        <option value="Chris Greenough">Chris Greenough</option>
-        <option value="Chris Rowe">Chris Rowe</option>
-        <option value="Eric Hansen">Eric Hansen</option>
-        <option value="Gordon Rettkowicz">Gordon Rettkowicz</option>
-        <option value="Jo Martell">Jo Martell</option>
-        <option value="Mark Kennerley">Mark Kennerley</option>
-        <option value="Paul Campbell">Paul Campbell</option>
-        <option value="Piers Shore">Piers Shore</option>
-        <option value="Priya Singh">Priya Singh</option>
-        <option value="Simon Till">Simon Till</option>
+    <select name="pillarOption2" id="pillarOption2" onchange="updateRemainingOptions(fieldEntries, possibleOptions)" width="300" style="width: 300px">
+        <option value="" selected disabled hidden>Choose second preference</option>
     </select>
     <br><br>
 
+    <select name="pillarOption3" id="pillarOption3" onchange="updateRemainingOptions(fieldEntries, possibleOptions)" width="300" style="width: 300px">
+        <option value="" selected disabled hidden>Choose third preference</option>
+    </select>
+    <br><br>
+
+    <select name="pillarOption4" id="pillarOption4" onchange="updateRemainingOptions(fieldEntries, possibleOptions)" width="300" style="width: 300px">
+        <option value="" selected disabled hidden>Choose fourth preference</option>
+    </select>
+    <br><br>
+
+    <script>
+            for (selectNum = 1; selectNum <= 4; selectNum++) {
+                fieldEntries = insertOptions("pillarOption" + selectNum, pillarOptions);
+            }
+    </script>
 
     <h2 id="status"></h2>
 
     <button id="saveButton">Save</button>
 
-    <h3>Remaining Options:</h3>
-    <p id="remainingOptions" />
+    
 
-    <script src="./app.js"></script>
+    <script>
+        console.log(fieldEntries)
+        fieldEntries = addDatabaseInteractions(possibleOptions);
+        console.log(fieldEntries)
+    </script>
 </body>
 
 </html>
